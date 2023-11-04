@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Notifications page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container flexitem">
+    <div class="wrapper">
+      <div class="head flexitem">
+        <div class="title">
+          <h3>Notifications <span class="unread-num"></span></h3>
+        </div>
+        <a href="#" class="mark-all">Mark all as read</a>
+      </div>
+      <ul class="content flexcol">
+        
+        <li><a href="#" class="flexitem unread">
+          <img src="assets/images/avatar-mark-webber.webp" alt="">
+          <div class="text">
+            <h5><strong>Mark Webbar</strong> reacted to your recent post <strong>My first Tournament today!</strong></h5>
+            <span>1m ago</span>
+          </div>
+        </a></li>
+        <li><a href="#" class="flexitem unread">
+          <img src="assets/images/avatar-angela-gray.webp" alt="">
+          <div class="text">
+            <h5><strong>Angela Gray</strong> followed You</h5>
+            <span>5m ago</span>
+          </div>
+        </a></li>
+        <li><a href="#" class="flexitem unread">
+          <img src="assets/images/avatar-jacob-thompson.webp" alt="">
+          <div class="text">
+            <h5><strong>Jacob Thompson</strong> has joined your group <strong>Chess Club</strong></h5>
+            <span>1day ago</span>
+          </div>
+        </a></li>
+        
+        <li><a href="#" class="flexitem">
+          <img src="assets/images/avatar-rizky-hasanuddin.webp" alt="">
+          <div class="text">
+            <h5><strong>Rizky Hasanuddin</strong> sent you a private message</h5>
+            <span>5days ago</span>
+            <div class="message">
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel nesciunt modi et inventore iusto hic tempore odio repellendus, eveniet asperiores molestias optio perferendis accusamus eius neque incidunt soluta ea? Ratione.</p>
+            </div>
+          </div>
+        </a></li>
+        <li><a href="#" class="flexitem">
+          <img src="assets/images/avatar-kimberly-smith.webp" alt="">
+          <div class="text">
+            <h5><strong>Kimberly Smith</strong> commented on your picture</h5>
+            <span>1m ago</span>
+          </div>
+          <img src="assets/images/image-chess.webp" alt="">
+        </a></li>
+        <li><a href="#" class="flexitem">
+          <img src="assets/images/avatar-nathan-peterson.webp" alt="">
+          <div class="text">
+            <h5><strong>Nathan Peterson</strong> reacted to your recent post <strong>5 end-game strategies to increase your win rate</strong></h5>
+            <span>2 weeks ago</span>
+          </div>
+        </a></li>
+        
+        <li><a href="#" class="flexitem">
+          <img src="assets/images/avatar-anna-kim.webp" alt="">
+          <div class="text">
+            <h5><strong>Anna Kim</strong> left the group <strong>Chess Club</strong></h5>
+            <span>2 weeks ago</span>
+          </div>
+        </a></li>
+        
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    const unreadNotifs = document.querySelector(".unread-num");
+    const readAllLink = document.querySelector(".mark-all");
+    const unreadLinks = document.querySelectorAll(".unread");
+    unreadNotifs.textContent = unreadLinks.length;
+
+    readAllLink.addEventListener("click", function (e) {
+      e.preventDefault();
+      unreadLinks.forEach((link) => {
+        removeClass(link, "unread");
+      });
+      unreadNotifs.textContent = 0;
+    });
+
+    unreadLinks.forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          removeClass(link, "unread");
+          unreadNotifs.textContent--;
+        })
+      });
+
+    function removeClass(element, className) {
+
+      element.classList.remove(className);
+
+    }
+
+
+  </script>
+</body>
+</html>
