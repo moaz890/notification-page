@@ -28,7 +28,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Add solution URL here](https://github.com/moaz890/notification-page)
-- Live Site URL: [Add live site URL here]()
+- Live Site URL: [Add live site URL here](https://moaz890.github.io/notification-page/)
 
 ## My process
 
